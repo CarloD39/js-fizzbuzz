@@ -2,21 +2,27 @@
 // ma per i multipli di 3 stampi “Fizz” al posto del numero e per i multipli di 5 stampi Buzz.
 // Per i numeri che sono sia multipli di 3 che di 5 stampi FizzBuzz.
 
- var number = 0;
+var NumberList = document.getElementById('number-items');
+var number = 0;
 
-for( var i = 1; i<=100; i++){
-    document.getElementById('number-items').innerHTML += i + '<br/>';
+for(x=1; x <= 100; x++){
 
-    if( i % 3 === 0 && i % 5 === 0){                
-        number += 'FizzBuzz' + '<br/>';
-        document.getElementById('number-items').innerHTML += 'FizzBuzz';
-
-    }else if(i % 3 === 0){
-        number += 'Fizz' + '<br/>';
-        document.getElementById('number-items').innerHTML += 'Fizz';
-
-    }else if(i % 5 === 0){
-        number += 'Buzz' + '<br/>' ;
-        document.getElementById('number-items').innerHTML += 'Buzz';
+    if((x % 3 == 0) && (x % 5 == 0)){
+        number = 'FizzBuzz' + '<br/>';    
     }
+
+    else if((x % 3 == 0) && (x % 5 !== 0)){
+        number = 'Fizz' + '<br/>';    
+    }
+
+    else if((x % 5 == 0) && (x % 3 !== 0)){
+        number = 'Buzz' + '<br/>';    
+    }
+
+    else{
+        number = x + '<br/>';    
+    }
+
+    NumberList.innerHTML += number;
 }
+
